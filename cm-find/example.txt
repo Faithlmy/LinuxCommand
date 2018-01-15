@@ -1,0 +1,27 @@
+1. 根据文件名来查找：-name -iname(不区分大小写)
+find ./ -name "k.txt"(查找当前目录(包含子目录)是否含有k.txt文件)
+find ./ -name "[0-9].txt" (正则表达式通配符)
+find ./ -name "*.sh" -a -user root (加用户)
+
+2. 按文件类型查找：-type
+find ./ -type d -name "name"(查找当前文件夹是否有name目录, f --> 文件， l --> 链接文件， b --> 块设备文件， c --> 字符设备文件，p --> 管道文件，s--> socket 文件)
+
+3. 按时间查找：atime, ctime, mtime(天)  amin  cmin  mmin(分钟)
+find ./ atime +5 (5天内没有访问的文件)
+find ./ atime -5 (5天内访问g国的文件)
+
+4. 按文件大小查找：-size
+find ./ -size 2M(+ 大于， - 小于，c k m g)
+
+5. 按文件权限查找：-perm
+find ./ -perm 775 
+
+6. 不递归：
+find -maxdepth 1 -name "*.c" (不递归，只显示当前目录下的满足条件的文件。默认的是递归出子目录的文件)
+
+7. 执行完的动作
+-print : 默认action
+-ls :
+-ok[commend] : 询问用户是否要执行
+-exec[commend] : 不问用户直接执行
+
