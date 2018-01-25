@@ -1,8 +1,9 @@
 linux
 redhat
 ubantu
+Debain
 debain
 foxconn
-faithlmy
+Faithlmy
 faith
 
